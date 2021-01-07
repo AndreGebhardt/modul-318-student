@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeineTransportApp_06._01._2021
+namespace Meine_TransportApp_1._2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace MeineTransportApp_06._01._2021
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Verbindungen());
+            Application.Run(new abfahrt());
         }
     }
 }

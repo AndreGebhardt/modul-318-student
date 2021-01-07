@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{281F7496-2AE6-417E-9303-07A388F27C47}</ProjectGuid>
+    <ProjectGuid>{B324721D-8E65-4C4E-8C7E-87CDE7B1BB0D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MeineTransportApp_06._01._2021</RootNamespace>
-    <AssemblyName>MeineTransportApp 06.01.2021</AssemblyName>
+    <RootNamespace>Meine_TransportApp_1._2</RootNamespace>
+    <AssemblyName>Meine TransportApp 1.2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,25 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abfartstafel.cs">
+    <Compile Include="Abfahrtstafel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abfartstafel.Designer.cs">
-      <DependentUpon>Abfartstafel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Verbindungen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Verbindungen.Designer.cs">
-      <DependentUpon>Verbindungen.cs</DependentUpon>
+    <Compile Include="Abfahrtstafel.Designer.cs">
+      <DependentUpon>Abfahrtstafel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Abfartstafel.resx">
-      <DependentUpon>Abfartstafel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Verbindungen.resx">
-      <DependentUpon>Verbindungen.cs</DependentUpon>
+    <EmbeddedResource Include="Abfahrtstafel.resx">
+      <DependentUpon>Abfahrtstafel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,19 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\SwissTransport.Core.HttpClient.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Core.IHttpClient.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Core.ITransport.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Core.Transport.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Connection.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.ConnectionPoint.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Connections.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Coordinate.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Station.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.StationBoard.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.StationBoardRoot.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Stations.datasource" />
-    <None Include="Properties\DataSources\SwissTransport.Models.Stop.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,6 +84,9 @@
       <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
       <Name>SwissTransport</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
