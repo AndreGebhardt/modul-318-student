@@ -28,20 +28,9 @@ namespace MeineTransportApp_06._01._2021
 
         private void Verbindungen_Load(object sender, EventArgs e)
         {
-            //verbindungSuchen.Enabled = false;
-        }
-
-        
-
-        
-        // ist eine Verbindung(Switch)zum Abfahrtsplan
-
-        private void abfahrtsButton_Click(object sender, EventArgs e)
-        {
-            abfarhtsTafel at = new abfarhtsTafel();
-            at.ShowDialog();
-        }
-
+            
+        }     
+       
         private void verbindungSuchen_Click_1(object sender, EventArgs e)
         {
             var verbindungen = transport.GetConnections(comboBoxStart.Text, comboBoxNach.Text);  //("Luzern", "Sursee"); Beispiel verbindungen, am anfang des Projektes
@@ -59,15 +48,7 @@ namespace MeineTransportApp_06._01._2021
                     verbindungen.ConnectionList[i].To.Delay.ToString()
 
                 });
-            }
-            //var verbindungen = transport.GetConnections(comboBoxStart.Text, comboBoxNach.Text);
-
-            //var temp1 = verbindungen.ConnectionList[0].From.Station;
-            //MessageBox.Show(temp1.ToString());
-
-            //var temp2 = verbindungen.ConnectionList[0].To.Station.Name;
-            //MessageBox.Show(temp2.ToString());
-
+            }          
 
         }
 
@@ -78,37 +59,61 @@ namespace MeineTransportApp_06._01._2021
 
         private void comboBoxStart_TextChanged(object sender, EventArgs e)
         {
-            
-                        
-           
 
             if (comboBoxStart.Text.Length > 0)
             {
-                var station = transport.GetStations(comboBoxStart.Text);
-                foreach (var x in station.StationList)
+                try
                 {
-                    comboBoxStart.Items.Add(x.Name);
+                    var station = transport.GetStations(comboBoxStart.Text);
 
+                    foreach (var stationen in station.StationList)
+                    {
+                        comboBoxStart.Items.Add(stationen.Name);
+                    }
                 }
-            }
-
+                catch
+                {
+                    MessageBox.Show("Keine gültige Station gefunden.");
+                }
             
+
+            }
+                        
         }
 
         private void comboBoxNach_TextChanged(object sender, EventArgs e)
         {
             if (comboBoxNach.Text.Length > 0)
             {
-                var station1 = transport.GetStations(comboBoxNach.Text);
-                foreach (var x in station1.StationList)
-                {
-                    comboBoxNach.Items.Add(x.Name);
+                try
+                {                                        
+                    var station1 = transport.GetStations(comboBoxNach.Text);
 
+                    foreach (var stationen in station1.StationList)
+                    {
+                    comboBoxNach.Items.Add(stationen.Name);
+
+                    }
                 }
-            }          
+                catch
+                {
+                    MessageBox.Show("Keine gültige Station gefunden.");
+                }
+            }       
            
             
         }
-       
+
+        private void abfahrtsButton_Click(object sender, EventArgs e)
+        {
+            abfarhtsTafel at = new abfarhtsTafel();
+            at.ShowDialog();
+        }
+
+        private void googlebutton_Click(object sender, EventArgs e)
+        {
+            GoogleMaps go = new GoogleMaps();
+            go.ShowDialog();
+        }
     }
 }

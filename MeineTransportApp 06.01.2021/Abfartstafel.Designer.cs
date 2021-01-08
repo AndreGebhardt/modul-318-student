@@ -44,7 +44,7 @@ namespace MeineTransportApp_06._01._2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 106);
+            this.label1.Location = new System.Drawing.Point(47, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 26);
             this.label1.TabIndex = 0;
@@ -53,13 +53,12 @@ namespace MeineTransportApp_06._01._2021
             // verbindungSuchen1
             // 
             this.verbindungSuchen1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verbindungSuchen1.Location = new System.Drawing.Point(452, 91);
+            this.verbindungSuchen1.Location = new System.Drawing.Point(405, 95);
             this.verbindungSuchen1.Name = "verbindungSuchen1";
             this.verbindungSuchen1.Size = new System.Drawing.Size(212, 92);
             this.verbindungSuchen1.TabIndex = 2;
             this.verbindungSuchen1.Text = "Verbindung suchen";
             this.verbindungSuchen1.UseVisualStyleBackColor = true;
-         
             this.verbindungSuchen1.Click += new System.EventHandler(this.verbindungSuchen1_Click);
             // 
             // dataGridViewabfahrt
@@ -74,7 +73,7 @@ namespace MeineTransportApp_06._01._2021
             this.dataGridViewabfahrt.Name = "dataGridViewabfahrt";
             this.dataGridViewabfahrt.RowHeadersWidth = 51;
             this.dataGridViewabfahrt.RowTemplate.Height = 24;
-            this.dataGridViewabfahrt.Size = new System.Drawing.Size(612, 201);
+            this.dataGridViewabfahrt.Size = new System.Drawing.Size(565, 164);
             this.dataGridViewabfahrt.TabIndex = 3;
             // 
             // abfahrt9
@@ -108,25 +107,24 @@ namespace MeineTransportApp_06._01._2021
             // comboBoxStation
             // 
             this.comboBoxStation.FormattingEnabled = true;
-            this.comboBoxStation.Location = new System.Drawing.Point(137, 106);
+            this.comboBoxStation.Location = new System.Drawing.Point(137, 95);
             this.comboBoxStation.Name = "comboBoxStation";
             this.comboBoxStation.Size = new System.Drawing.Size(228, 24);
             this.comboBoxStation.TabIndex = 5;
-            
+            this.comboBoxStation.TextChanged += new System.EventHandler(this.comboBoxStation_TextChanged);
             // 
             // abfarhtsTafel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(724, 450);
+            this.ClientSize = new System.Drawing.Size(685, 434);
             this.Controls.Add(this.comboBoxStation);
             this.Controls.Add(this.dataGridViewabfahrt);
             this.Controls.Add(this.verbindungSuchen1);
             this.Controls.Add(this.label1);
             this.Name = "abfarhtsTafel";
             this.Text = "Abfahrtstafel 1.0";
-            this.Load += new System.EventHandler(this.abfarhtsTafel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewabfahrt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

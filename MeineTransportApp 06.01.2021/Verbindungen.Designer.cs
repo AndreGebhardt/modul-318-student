@@ -45,18 +45,20 @@ namespace MeineTransportApp_06._01._2021
             this.abfahrtsButton = new System.Windows.Forms.Button();
             this.comboBoxNach = new System.Windows.Forms.ComboBox();
             this.comboBoxStart = new System.Windows.Forms.ComboBox();
+            this.googlebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVerbindungen)).BeginInit();
             this.SuspendLayout();
             // 
             // verbindungSuchen
             // 
-            this.verbindungSuchen.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verbindungSuchen.Location = new System.Drawing.Point(261, 236);
+            this.verbindungSuchen.BackColor = System.Drawing.Color.SteelBlue;
+            this.verbindungSuchen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verbindungSuchen.Location = new System.Drawing.Point(127, 236);
             this.verbindungSuchen.Name = "verbindungSuchen";
-            this.verbindungSuchen.Size = new System.Drawing.Size(220, 57);
+            this.verbindungSuchen.Size = new System.Drawing.Size(447, 57);
             this.verbindungSuchen.TabIndex = 0;
             this.verbindungSuchen.Text = "Verbindung suchen";
-            this.verbindungSuchen.UseVisualStyleBackColor = true;
+            this.verbindungSuchen.UseVisualStyleBackColor = false;
             this.verbindungSuchen.Click += new System.EventHandler(this.verbindungSuchen_Click_1);
             // 
             // label1
@@ -169,12 +171,14 @@ namespace MeineTransportApp_06._01._2021
             // 
             // abfahrtsButton
             // 
-            this.abfahrtsButton.Location = new System.Drawing.Point(12, 12);
+            this.abfahrtsButton.BackColor = System.Drawing.Color.Khaki;
+            this.abfahrtsButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abfahrtsButton.Location = new System.Drawing.Point(129, 12);
             this.abfahrtsButton.Name = "abfahrtsButton";
-            this.abfahrtsButton.Size = new System.Drawing.Size(236, 37);
+            this.abfahrtsButton.Size = new System.Drawing.Size(216, 37);
             this.abfahrtsButton.TabIndex = 12;
             this.abfahrtsButton.Text = "Abfahrtstafel";
-            this.abfahrtsButton.UseVisualStyleBackColor = true;
+            this.abfahrtsButton.UseVisualStyleBackColor = false;
             this.abfahrtsButton.Click += new System.EventHandler(this.abfahrtsButton_Click);
             // 
             // comboBoxNach
@@ -191,16 +195,29 @@ namespace MeineTransportApp_06._01._2021
             this.comboBoxStart.FormattingEnabled = true;
             this.comboBoxStart.Location = new System.Drawing.Point(127, 161);
             this.comboBoxStart.Name = "comboBoxStart";
-            this.comboBoxStart.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxStart.Size = new System.Drawing.Size(128, 24);
             this.comboBoxStart.TabIndex = 16;
             this.comboBoxStart.TextChanged += new System.EventHandler(this.comboBoxStart_TextChanged);
+            // 
+            // googlebutton
+            // 
+            this.googlebutton.BackColor = System.Drawing.Color.Khaki;
+            this.googlebutton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.googlebutton.Location = new System.Drawing.Point(351, 12);
+            this.googlebutton.Name = "googlebutton";
+            this.googlebutton.Size = new System.Drawing.Size(223, 35);
+            this.googlebutton.TabIndex = 17;
+            this.googlebutton.Text = "Karte";
+            this.googlebutton.UseVisualStyleBackColor = false;
+            this.googlebutton.Click += new System.EventHandler(this.googlebutton_Click);
             // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(783, 646);
+            this.ClientSize = new System.Drawing.Size(745, 540);
+            this.Controls.Add(this.googlebutton);
             this.Controls.Add(this.comboBoxStart);
             this.Controls.Add(this.comboBoxNach);
             this.Controls.Add(this.abfahrtsButton);
@@ -238,6 +255,7 @@ namespace MeineTransportApp_06._01._2021
         private System.Windows.Forms.Button abfahrtsButton;
         private System.Windows.Forms.ComboBox comboBoxNach;
         private System.Windows.Forms.ComboBox comboBoxStart;
+        private System.Windows.Forms.Button googlebutton;
     }
 }
 

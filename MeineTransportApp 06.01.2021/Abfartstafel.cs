@@ -18,42 +18,53 @@ namespace MeineTransportApp_06._01._2021
         public abfarhtsTafel()
         {
             InitializeComponent();
-        }               
-
-        private void abfarhtsTafel_Load(object sender, EventArgs e)
-        {
-            
         }
+                
 
         private void verbindungSuchen1_Click(object sender, EventArgs e)
         {
-            var verbindungen = transport.GetStationBoard(comboBoxStation.Text, comboBoxStation.Text);  
+            var stationsTafel = transport.GetStations(comboBoxStation.Text).StationList[0].Id;
+            var tafel = transport.GetStationBoard(comboBoxStation.Text, stationsTafel);
+            var stationName = transport.GetStations(comboBoxStation.Text).StationList[0].Name;
 
             dataGridViewabfahrt.Rows.Clear();
 
-            dataGridViewabfahrt.Rows.Clear();
+            
 
             for (int i = 0; i < 4; i++)
             {
+                var verbindung = transport.GetConnections(comboBoxStation.Text, tafel.Entries[i].To);
+                
                 dataGridViewabfahrt.Rows.Add(new string[]
                 {
-                    verbindungen.ConnectionList[i].From.Departure.ToString(),
-                    verbindungen.ConnectionList[i].Duration.ToString(),
-                    verbindungen.ConnectionList[i].From.Platform.ToString(),
-                    verbindungen.ConnectionList[i].To.Arrival.ToString(),
-                    verbindungen.ConnectionList[i].To.Delay.ToString()
+                    verbindung.ConnectionList[i].From.Departure.ToString(),
+                    tafel.Entries[i].To.ToString(),
+                    verbindung.ConnectionList[i].From.Platform.ToString(),                    
+                    verbindung.ConnectionList[i].To.Delay.ToString()
 
                 });
             }
-
-        private void verbindungSuchen1_TextChanged(object sender, EventArgs e)
-        {
-            verbindungSuchen1.Enabled = comboBoxStation.Text.Length > 0;
-        }           
+        
+        }
 
         private void comboBoxStation_TextChanged(object sender, EventArgs e)
         {
+            if (comboBoxStation.Text.Length > 0)
+            {
+                try
+                {                                    
+                    var station1 = transport.GetStations(comboBoxStation.Text);
 
+                    foreach (var x in station1.StationList)
+                    {
+                        comboBoxStation.Items.Add(x.Name);
+                    }   
+                }
+                catch
+                {
+                    MessageBox.Show("Keine gültige Station gefunden.");
+                }
+            }
         }
     }
 }
