@@ -62,6 +62,7 @@ namespace MeineTransportApp_06._01._2021
 
             if (comboBoxStart.Text.Length > 0)
             {
+                verbindungSuchen.Enabled = true;
                 try
                 {
                     var station = transport.GetStations(comboBoxStart.Text);
@@ -74,9 +75,12 @@ namespace MeineTransportApp_06._01._2021
                 catch
                 {
                     MessageBox.Show("Keine gültige Station gefunden.");
-                }
-            
+                }           
 
+            }
+            else
+            {
+                verbindungSuchen.Enabled = false;
             }
                         
         }
@@ -114,6 +118,17 @@ namespace MeineTransportApp_06._01._2021
         {
             GoogleMaps go = new GoogleMaps();
             go.ShowDialog();
+        }
+
+        private void buttonMail_Click(object sender, EventArgs e)
+        {
+            E_Mail mail = new E_Mail();
+            mail.ShowDialog();
+        }
+
+        private void Verbindungen_Load_1(object sender, EventArgs e)
+        {
+            verbindungSuchen.Enabled = false;
         }
     }
 }

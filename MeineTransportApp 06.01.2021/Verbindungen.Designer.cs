@@ -46,6 +46,7 @@ namespace MeineTransportApp_06._01._2021
             this.comboBoxNach = new System.Windows.Forms.ComboBox();
             this.comboBoxStart = new System.Windows.Forms.ComboBox();
             this.googlebutton = new System.Windows.Forms.Button();
+            this.buttonMail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVerbindungen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,12 +212,23 @@ namespace MeineTransportApp_06._01._2021
             this.googlebutton.UseVisualStyleBackColor = false;
             this.googlebutton.Click += new System.EventHandler(this.googlebutton_Click);
             // 
+            // buttonMail
+            // 
+            this.buttonMail.Location = new System.Drawing.Point(616, 20);
+            this.buttonMail.Name = "buttonMail";
+            this.buttonMail.Size = new System.Drawing.Size(75, 23);
+            this.buttonMail.TabIndex = 18;
+            this.buttonMail.Text = "Mail";
+            this.buttonMail.UseVisualStyleBackColor = true;
+            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(745, 540);
+            this.Controls.Add(this.buttonMail);
             this.Controls.Add(this.googlebutton);
             this.Controls.Add(this.comboBoxStart);
             this.Controls.Add(this.comboBoxNach);
@@ -231,6 +243,7 @@ namespace MeineTransportApp_06._01._2021
             this.Controls.Add(this.verbindungSuchen);
             this.Name = "Verbindungen";
             this.Text = "Meine Transport-App / Verbindungen";
+            this.Load += new System.EventHandler(this.Verbindungen_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVerbindungen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,6 +269,7 @@ namespace MeineTransportApp_06._01._2021
         private System.Windows.Forms.ComboBox comboBoxNach;
         private System.Windows.Forms.ComboBox comboBoxStart;
         private System.Windows.Forms.Button googlebutton;
+        private System.Windows.Forms.Button buttonMail;
     }
 }
 
