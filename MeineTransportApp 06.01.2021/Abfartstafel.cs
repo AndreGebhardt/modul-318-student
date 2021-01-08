@@ -23,26 +23,33 @@ namespace MeineTransportApp_06._01._2021
 
         private void verbindungSuchen1_Click(object sender, EventArgs e)
         {
-            var stationsTafel = transport.GetStations(comboBoxStation.Text).StationList[0].Id;
-            var tafel = transport.GetStationBoard(comboBoxStation.Text, stationsTafel);
-            var stationName = transport.GetStations(comboBoxStation.Text).StationList[0].Name;
+            try { 
+                var stationsTafel = transport.GetStations(comboBoxStation.Text).StationList[0].Id;
+                var tafel = transport.GetStationBoard(comboBoxStation.Text, stationsTafel);
+                var stationName = transport.GetStations(comboBoxStation.Text).StationList[0].Name;
 
-            dataGridViewabfahrt.Rows.Clear();
+                dataGridViewabfahrt.Rows.Clear();
 
             
 
-            for (int i = 0; i < 4; i++)
-            {
-                var verbindung = transport.GetConnections(comboBoxStation.Text, tafel.Entries[i].To);
-                
-                dataGridViewabfahrt.Rows.Add(new string[]
+                for (int i = 0; i < 4; i++)
                 {
+                
+                    var verbindung = transport.GetConnections(comboBoxStation.Text, tafel.Entries[i].To);
+                
+                    dataGridViewabfahrt.Rows.Add(new string[]
+                    {
                     verbindung.ConnectionList[i].From.Departure.ToString(),
                     tafel.Entries[i].To.ToString(),
                     verbindung.ConnectionList[i].From.Platform.ToString(),                    
                     verbindung.ConnectionList[i].To.Delay.ToString()
 
-                });
+                    });
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Keine Verbindung vorhanden. ");
             }
         
         }

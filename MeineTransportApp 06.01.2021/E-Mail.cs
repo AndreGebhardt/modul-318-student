@@ -34,7 +34,7 @@ namespace MeineTransportApp_06._01._2021
             client.EnableSsl = true;
             client.Send(mail);
 
-            MessageBox.Show("E-Mailwurde erfolgreich gesendet");// MessageBoxButtons.OK);
+            MessageBox.Show("E-Mail wurde erfolgreich gesendet");// MessageBoxButtons.OK);
 
         }
     }

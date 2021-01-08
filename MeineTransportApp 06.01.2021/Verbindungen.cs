@@ -33,22 +33,30 @@ namespace MeineTransportApp_06._01._2021
        
         private void verbindungSuchen_Click_1(object sender, EventArgs e)
         {
-            var verbindungen = transport.GetConnections(comboBoxStart.Text, comboBoxNach.Text);  //("Luzern", "Sursee"); Beispiel verbindungen, am anfang des Projektes
-
-            dataGridViewVerbindungen.Rows.Clear();
-            
-            for (int i = 0; i < 4; i++)
+            try
             {
-                dataGridViewVerbindungen.Rows.Add(new string[]
+                var verbindungen = transport.GetConnections(comboBoxStart.Text, comboBoxNach.Text);  //("Luzern", "Sursee"); Beispiel verbindungen, am anfang des Projektes
+
+                dataGridViewVerbindungen.Rows.Clear();
+
+                for (int i = 0; i < 4; i++)
                 {
+                    dataGridViewVerbindungen.Rows.Add(new string[]
+                    {
                     verbindungen.ConnectionList[i].From.Departure.ToString(),
                     verbindungen.ConnectionList[i].Duration.ToString(),
                     verbindungen.ConnectionList[i].From.Platform.ToString(),
                     verbindungen.ConnectionList[i].To.Arrival.ToString(),
                     verbindungen.ConnectionList[i].To.Delay.ToString()
 
-                });
-            }          
+                    });
+                }
+            
+            }
+            catch
+            {
+                MessageBox.Show("Keine Verbindung vorhanden. ");
+            }
 
         }
 

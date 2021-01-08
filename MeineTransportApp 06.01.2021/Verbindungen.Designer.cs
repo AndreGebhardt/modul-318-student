@@ -174,7 +174,7 @@ namespace MeineTransportApp_06._01._2021
             // 
             this.abfahrtsButton.BackColor = System.Drawing.Color.Khaki;
             this.abfahrtsButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abfahrtsButton.Location = new System.Drawing.Point(129, 12);
+            this.abfahrtsButton.Location = new System.Drawing.Point(9, 14);
             this.abfahrtsButton.Name = "abfahrtsButton";
             this.abfahrtsButton.Size = new System.Drawing.Size(216, 37);
             this.abfahrtsButton.TabIndex = 12;
@@ -204,9 +204,9 @@ namespace MeineTransportApp_06._01._2021
             // 
             this.googlebutton.BackColor = System.Drawing.Color.Khaki;
             this.googlebutton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.googlebutton.Location = new System.Drawing.Point(351, 12);
+            this.googlebutton.Location = new System.Drawing.Point(243, 16);
             this.googlebutton.Name = "googlebutton";
-            this.googlebutton.Size = new System.Drawing.Size(223, 35);
+            this.googlebutton.Size = new System.Drawing.Size(230, 35);
             this.googlebutton.TabIndex = 17;
             this.googlebutton.Text = "Karte";
             this.googlebutton.UseVisualStyleBackColor = false;
@@ -214,12 +214,14 @@ namespace MeineTransportApp_06._01._2021
             // 
             // buttonMail
             // 
-            this.buttonMail.Location = new System.Drawing.Point(616, 20);
+            this.buttonMail.BackColor = System.Drawing.Color.Khaki;
+            this.buttonMail.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMail.Location = new System.Drawing.Point(491, 15);
             this.buttonMail.Name = "buttonMail";
-            this.buttonMail.Size = new System.Drawing.Size(75, 23);
+            this.buttonMail.Size = new System.Drawing.Size(231, 35);
             this.buttonMail.TabIndex = 18;
             this.buttonMail.Text = "Mail";
-            this.buttonMail.UseVisualStyleBackColor = true;
+            this.buttonMail.UseVisualStyleBackColor = false;
             this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
             // 
             // Verbindungen
